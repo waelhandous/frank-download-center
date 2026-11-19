@@ -5,7 +5,9 @@
 <style>
 :root{--navy:#03036b;--dark:#02023f;--orange:#ff5200;--white:#f5f5f7;--line:rgba(255,255,255,.16)}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;width:100%;overflow-x:hidden}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--white);background:var(--navy)}
-body:before{content:"";position:fixed;z-index:12;top:0;left:52%;width:1px;height:100dvh;pointer-events:none;background:#4eff9e;opacity:.65}
+body:before{content:"";position:fixed;z-index:12;top:0;left:0;width:2px;height:100dvh;pointer-events:none;background:linear-gradient(180deg,transparent 0%,#54ff9f 12%,#2dff9f 50%,#54ff9f 88%,transparent 100%);box-shadow:0 0 10px rgba(43,255,143,.75);opacity:.62;animation:frankScan 3.2s linear infinite}
+@keyframes frankScan{0%{transform:translateX(-4vw)}100%{transform:translateX(104vw)}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none;opacity:.25;left:50%}}
 .shell{width:min(100%,1024px);margin:auto;padding:clamp(14px,2vw,28px);display:flex;flex-direction:column;gap:0}
 header{display:flex;justify-content:space-between;align-items:center;min-height:32px}header .brand{font-size:19px;letter-spacing:.085em;font-weight:800}header .brand span,.hero strong{color:var(--orange)}
 header a{color:var(--white);text-decoration:none;font-size:12px;opacity:.9}
