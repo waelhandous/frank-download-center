@@ -1,0 +1,14 @@
+name: FRANK favicon release guard
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  favicon:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify official FRANK favicon on every page
+        run: python3 scripts/check_favicon.py
